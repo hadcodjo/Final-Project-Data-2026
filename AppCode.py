@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 from openai import OpenAI
 from datetime import datetime
+import os
 
 # ===============================
 # CONFIGURATION DE LA PAGE STREAMLIT
@@ -512,14 +513,14 @@ elif page == "📈 Analyse":
 elif page == "🤖 AI Conseiller":
     st.markdown('<div class="big-title">🤖 AI Conseiller</div>', unsafe_allow_html=True)
 
-    # Récupérer la clé API OpenAI depuis les secrets de Colab
-    # L'utilisateur devra s'assurer d'avoir ajouté 'OPENAI_API_KEY' dans les secrets de Colab.
-    openai_api_key = userdata.get("OPENAI_API_KEY")
+    # Récupérer la clé API OpenAI depuis les variables d'environnement
+    # L'utilisateur devra définir la variable d'environnement OPENAI_API_KEY.
+    openai_api_key = os.environ.get("OPENAI_API_KEY")
 
     if not st.session_state.expenses:
         st.warning("Ajoutez des dépenses pour obtenir une analyse IA.")
     elif not openai_api_key:
-        st.error("Clé API OpenAI non configurée. Veuillez l'ajouter dans les secrets de Colab sous le nom 'OPENAI_API_KEY'.")
+        st.error("Clé API OpenAI non configurée. Veuillez définir la variable d'environnement OPENAI_API_KEY.")
     else:
         df = pd.DataFrame(st.session_state.expenses)
 
