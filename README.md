@@ -1,4 +1,4 @@
-## 💎 Application intelligente de gestion des finances.
+## 💎 Application de gestion financières.
 
 **Projet réalisé par :**
 - CODJO Had Candide (Master 1 Finance)
@@ -18,12 +18,10 @@ Son objectif est de mettre en pratique les différentes notions abordées durant
 - la manipulation de données avec **Python** et **Pandas** ;
 - la création de visualisations interactives avec **Plotly** ;
 - le développement d’une **application web interactive** avec **Streamlit** ;
-- l’intégration de fonctionnalités d’**intelligence artificielle** via l’API **OpenAI**.
 
 ## ✨ Fonctionnalités
 
 - **Visualisations interactives** : graphiques dynamiques permettant d’explorer les tendances de dépenses par période.  
-- **Analyses personnalisées** : génération de recommandations personnalisées basées sur l’analyse des données.  
 - **Filtres personnalisables** : segmentation des données selon différents critères (type de dépense, périodicité, etc.).  
 - **Tableaux de bord** : vue d’ensemble des principaux indicateurs clés.
   
