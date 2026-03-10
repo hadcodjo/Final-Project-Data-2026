@@ -455,7 +455,7 @@ elif page == "📈 Analyse":
 
         # ===============================
         # STATISTIQUES PAR CATEGORIE (incluant une ligne pour le total)
-# ===============================
+        # ===============================
 
         st.markdown("## 📂 Statistiques par Type de Dépense")
 
@@ -504,48 +504,3 @@ elif page == "📈 Analyse":
         # Concatenate category statistics with the total row
         stats_final = pd.concat([stats_cat, total_row], ignore_index=True)
         st.dataframe(stats_final, use_container_width=True)
-
-# ===============================
-# AI CONSEILLER
-# ===============================
-
-elif page == "🤖 AI Conseiller":
-    st.markdown('<div class="big-title">🤖 AI Conseiller</div>', unsafe_allow_html=True)
-
-    # Récupérer la clé API OpenAI depuis les variables d'environnement
-    # L'utilisateur devra définir la variable d'environnement OPENAI_API_KEY.
-    openai_api_key = os.environ.get("OPENAI_API_KEY")
-
-    if not st.session_state.expenses:
-        st.warning("Ajoutez des dépenses pour obtenir une analyse IA.")
-    elif not openai_api_key:
-        st.error("Clé API OpenAI non configurée. Veuillez définir la variable d'environnement OPENAI_API_KEY.")
-    else:
-        df = pd.DataFrame(st.session_state.expenses)
-
-        prompt = f"""
-        Analyse de manière synthétiques les dépenses suivantes :
-        {df.groupby("Catégorie")["Montant"].sum().to_dict()}
-        Donne-moi des recommandations personnalisées pour optimiser mes finances, réduire les dépenses inutiles et améliorer mon épargne.
-        Formule tes conseils de manière claire, concise et actionnable, en mettant l'accent sur les catégories les plus coûteuses.
-
-        """
-
-        if st.button("Analyser avec IA"):
-            try:
-                client = OpenAI(api_key=openai_api_key)
-
-                with st.spinner("Analyse en cours..."):
-                    response = client.chat.completions.create(
-                        model="gpt-4o-mini",
-                        messages=[
-                            {"role": "system", "content": "Tu es un expert financier stratégique."},
-                            {"role": "user", "content": prompt}
-                        ]
-                    )
-
-                st.success("Analyse IA")
-                st.write(response.choices[0].message.content)
-
-            except Exception as e:
-                st.error(f"Erreur lors de l'appel à l'API OpenAI : {e}")
