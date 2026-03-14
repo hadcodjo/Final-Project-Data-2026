@@ -52,7 +52,7 @@ pip install -r requirements.txt
 ## 🌐 Lancer l'application
 
 ```bash
-streamlit run AppCode.py
+python3 -m streamlit run AppCode.py
 ```
 Une fois l’application lancée, elle sera accessible dans votre navigateur à l’adresse suivante :
 
