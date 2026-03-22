@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from datetime import datetime
+import google.generativeai as genai
 import os
 
 # ===============================
@@ -502,3 +503,43 @@ elif page == "📈 Analyse":
         # Concatenate category statistics with the total row
         stats_final = pd.concat([stats_cat, total_row], ignore_index=True)
         st.dataframe(stats_final, use_container_width=True)
+
+# ===============================
+# AI CONSEILLER
+# ===============================
+
+elif page == "🤖 AI Conseiller":
+    st.markdown('<div class="big-title">🤖 AI Conseiller</div>', unsafe_allow_html=True)
+
+    # Récupérer la clé API Gemini depuis les secrets de Colab
+    # L'utilisateur devra s'assurer d'avoir ajouté 'GEMINI_API_KEY' dans les secrets de Colab.
+    gemini_api_key = userdata.get("GEMINI_API_KEY") # Changed key name
+
+    if not st.session_state.expenses:
+        st.warning("Ajoutez des dépenses pour obtenir une analyse IA.")
+    elif not gemini_api_key:
+        st.error("Clé API Gemini non configurée. Veuillez l'ajouter dans les secrets de Colab sous le nom 'GEMINI_API_KEY'.") # Updated error message
+    else:
+        df = pd.DataFrame(st.session_state.expenses)
+
+        prompt = f"""
+        Analyse de manière synthétiques les dépenses suivantes :
+        {df.groupby("Catégorie")["Montant"].sum().to_dict()}
+        Donne-moi des recommandations personnalisées pour optimiser mes finances, réduire les dépenses inutiles et améliorer mon épargne.
+        Formule tes conseils de manière claire, concise et actionnable, en mettant l'accent sur les catégories les plus coûteuses.
+
+        """
+
+        if st.button("Analyser avec IA"):
+            try:
+                genai.configure(api_key=gemini_api_key) # Initialize Gemini client
+                model = genai.GenerativeModel("gemini-pro") # Specify Gemini model
+
+                with st.spinner("Analyse en cours..."):
+                    response = model.generate_content(prompt) # Call Gemini API
+
+                st.success("Analyse IA")
+                st.write(response.text) # Access the text content from the Gemini response
+
+            except Exception as e:
+                st.error(f"Erreur lors de l'appel à l'API Gemini : {e}") # Updated error message
