@@ -503,7 +503,6 @@ elif page == "📈 Analyse":
         # Concatenate category statistics with the total row
         stats_final = pd.concat([stats_cat, total_row], ignore_index=True)
         st.dataframe(stats_final, use_container_width=True)
-
 # ===============================
 # AI CONSEILLER
 # ===============================
@@ -511,14 +510,13 @@ elif page == "📈 Analyse":
 elif page == "🤖 AI Conseiller":
     st.markdown('<div class="big-title">🤖 AI Conseiller</div>', unsafe_allow_html=True)
 
-    # Récupérer la clé API Gemini depuis les secrets de Colab
-    # L'utilisateur devra s'assurer d'avoir ajouté 'GEMINI_API_KEY' dans les secrets de Colab.
-    gemini_api_key = os.environ.get("GEMINI_API_KEY") # Changed key name
+    # Entrée de la clé API Gemini par l'utilisateur
+    api_key = st.text_input("Entrez votre clé API Gemini", type="password")
 
     if not st.session_state.expenses:
         st.warning("Ajoutez des dépenses pour obtenir une analyse IA.")
-    elif not gemini_api_key:
-        st.error("Clé API Gemini non configurée. Veuillez l'ajouter dans les secrets de Colab sous le nom 'GEMINI_API_KEY'.") # Updated error message
+    elif not api_key:
+        st.error("Veuillez entrer votre clé API Gemini.")
     else:
         df = pd.DataFrame(st.session_state.expenses)
 
@@ -532,7 +530,7 @@ elif page == "🤖 AI Conseiller":
 
         if st.button("Analyser avec IA"):
             try:
-                genai.configure(api_key=gemini_api_key) # Initialize Gemini client
+                genai.configure(api_key=api_key) # Initialize Gemini client
                 model = genai.GenerativeModel("gemini-pro") # Specify Gemini model
 
                 with st.spinner("Analyse en cours..."):
