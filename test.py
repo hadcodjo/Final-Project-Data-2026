@@ -513,7 +513,7 @@ elif page == "🤖 AI Conseiller":
 
     # Récupérer la clé API Gemini depuis les secrets de Colab
     # L'utilisateur devra s'assurer d'avoir ajouté 'GEMINI_API_KEY' dans les secrets de Colab.
-    gemini_api_key = userdata.get("GEMINI_API_KEY") # Changed key name
+    gemini_api_key = os.environ.get("GEMINI_API_KEY") # Changed key name
 
     if not st.session_state.expenses:
         st.warning("Ajoutez des dépenses pour obtenir une analyse IA.")
