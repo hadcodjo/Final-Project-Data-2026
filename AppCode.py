@@ -492,7 +492,7 @@ elif page == "📈 Analyse":
             overall_std_val = 0.0
 
         total_row = pd.DataFrame([{
-            "Catégorie": "Total Dépenses**", # Added bold markdown
+            "Catégorie": "Total Dépenses", # Added bold markdown
             "mean": overall_mean_val,
             "std": overall_std_val,
             "min": overall_min_val,
