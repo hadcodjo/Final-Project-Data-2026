@@ -468,16 +468,17 @@ elif page == "📈 Analyse":
             df_aggregated_for_stats_cat["PeriodKey"] = df_aggregated_for_stats_cat["Date"].astype(str) # Convert Period object to string
             df_aggregated_for_stats_cat = df_aggregated_for_stats_cat.drop(columns="Date")
 
-            df_aggregated_for_stats_total = df_filtered.groupby(df_filtered["Date"].dt.to_period(freq[0]))["Montant"].sum().reset_index(name="Montant")
-            df_aggregated_for_stats_total["PeriodKey"] = df_aggregated_for_stats_total["Date"].astype(str) # Convert Period object to string
+            df_aggregated_for_stats_total = df_filtered.groupby(df_filtered["Date"].dt.to_period(freq[0]])["Montant"].sum().reset_index(name="Montant")
+            df_aggregated_for_stats_total["PeriodKey"] = df_aggregated_for_stats_stats_total["Date"].astype(str) # Convert Period object to string
             df_aggregated_for_stats_total = df_aggregated_for_stats_total.drop(columns="Date")
-
+        
         # Calculate category statistics on the appropriate data
         stats_cat = df_aggregated_for_stats_cat.groupby("Catégorie")["Montant"].agg(
             mean="mean",
             std="std",
             min="min",
-            max="max"
+            max="max",
+            sum="sum"
         ).reset_index()
 
         # Calculate overall statistics for 'Total Dépenses' row
@@ -486,6 +487,7 @@ elif page == "📈 Analyse":
         overall_std_val = df_aggregated_for_stats_total["Montant"].std()
         overall_min_val = df_aggregated_for_stats_total["Montant"].min()
         overall_max_val = df_aggregated_for_stats_total["Montant"].max()
+        overall_sum_val = df_aggregated_for_stats_total["Montant"].sum()
 
         # Handle cases where std might be NaN if only one period exists
         if pd.isna(overall_std_val):
@@ -496,7 +498,8 @@ elif page == "📈 Analyse":
             "mean": overall_mean_val,
             "std": overall_std_val,
             "min": overall_min_val,
-            "max": overall_max_val
+            "max": overall_max_val,
+            "sum": overall_sum_val
         }])
 
         # Concatenate category statistics with the total row
