@@ -531,7 +531,7 @@ elif page == "🤖 AI Conseiller":
         if st.button("Analyser avec IA"):
             try:
                 genai.configure(api_key=api_key) # Initialize Gemini client
-                model = genai.GenerativeModel("gemini-pro") # Specify Gemini model
+                model = genai.GenerativeModel("models/gemini-3-flash-preview") # Specify Gemini model
 
                 with st.spinner("Analyse en cours..."):
                     response = model.generate_content(prompt) # Call Gemini API
