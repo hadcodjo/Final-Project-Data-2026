@@ -29,9 +29,12 @@ Son objectif est de mettre en pratique les différentes notions abordées durant
 
 ```bash
 Final-Project-Data-2026/
-├── AppCode.py             # Application principale et modules réutilisables
-├── requirements.txt       # Dépendances Python nécessaires au projet
-└── README.md              # Documentation du projet
+├── data/                 # Dossier contenant toutes les bases de données utilisées dans le projet
+│   ├── Revenus.csv       # Données sur les revenus
+│   └── Depenses.csv      # Données sur les dépenses
+├── AppCode.py            # Code principal de l'application Streamlit
+├── requirements.txt      # Liste des packages Python nécessaires pour exécuter le projet
+└── README.md             # Documentation et explications du projet          
 ```
 ## 🚀 Installation et utilisation
 
