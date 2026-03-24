@@ -468,7 +468,7 @@ elif page == "📈 Analyse":
             df_aggregated_for_stats_cat["PeriodKey"] = df_aggregated_for_stats_cat["Date"].astype(str) # Convert Period object to string
             df_aggregated_for_stats_cat = df_aggregated_for_stats_cat.drop(columns="Date")
 
-            df_aggregated_for_stats_total = df_filtered.groupby(df_filtered["Date"].dt.to_period(freq[0]])["Montant"].sum().reset_index(name="Montant")
+            df_aggregated_for_stats_total = df_filtered.groupby(df_filtered["Date"].dt.to_period(freq[0]))["Montant"].sum().reset_index(name="Montant")
             df_aggregated_for_stats_total["PeriodKey"] = df_aggregated_for_stats_stats_total["Date"].astype(str) # Convert Period object to string
             df_aggregated_for_stats_total = df_aggregated_for_stats_total.drop(columns="Date")
         
