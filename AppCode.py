@@ -236,10 +236,10 @@ elif page == "📊 Dépenses":
         st.markdown("#### Ajouter une nouvelle dépense manuellement")
         categories = [
             "Logement",
-            "Supermarché",
+            "Vie quotidienne",
             "Transport",
             "Autres Charges",
-            "Restauration & Divertissement",
+            "Loisirs & Divertissement",
             "Études",
             "Santé",
             "Epargnes",
