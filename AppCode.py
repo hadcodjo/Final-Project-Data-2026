@@ -440,7 +440,7 @@ elif page == "📈 Analyse":
         # DIAGRAMME CIRCULAIRE
         # ===============================
 
-        st.markdown("## 🥧 Proportion des Dépenses")
+        st.markdown("## 🥧 Structures des Dépenses")
 
         fig_pie = px.pie(
             df_filtered,
