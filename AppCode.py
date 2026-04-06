@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.express as px
 from datetime import datetime
 import os
+import google.generativeai as genai
 
 # ===============================
 # CONFIGURATION DE LA PAGE STREAMLIT
@@ -393,14 +394,23 @@ elif page == "📈 Analyse":
         # EVOLUTION TOTALE + PAR CATEGORIE
         # ===============================
 
+        # Mapping des fréquences françaises vers codes pandas
+        freq_mapping = {
+            "Journalier": "D",
+            "Hebdomadaire": "W",
+            "Mensuel": "M",
+            "Annuel": "Y"
+        }
+        freq_code = freq_mapping[freq]
+
         if freq == "Journalier":
             df_filtered["Periode"] = df_filtered["Date"].dt.date
         elif freq == "Hebdomadaire":
-            df_filtered["Periode"] = df_filtered["Date"].dt.to_period("W").astype(str)
+            df_filtered["Periode"] = df_filtered["Date"].dt.to_period(freq_code).astype(str)
         elif freq == "Mensuel":
-            df_filtered["Periode"] = df_filtered["Date"].dt.to_period("M").astype(str)
+            df_filtered["Periode"] = df_filtered["Date"].dt.to_period(freq_code).astype(str)
         else:
-            df_filtered["Periode"] = df_filtered["Date"].dt.to_period("Y").astype(str)
+            df_filtered["Periode"] = df_filtered["Date"].dt.to_period(freq_code).astype(str)
 
         # Total
         df_total = df_filtered.groupby("Periode")["Montant"].sum().reset_index()
@@ -457,18 +467,17 @@ elif page == "📈 Analyse":
 
         st.markdown("## 📂 Statistiques par Type de Dépense")
 
-        # Prepare aggregated data for statistics based on frequency
         if freq == "Journalier":
             # For daily, stats are on individual transactions per category
             df_aggregated_for_stats_cat = df_filtered.copy()
             df_aggregated_for_stats_total = df_filtered.copy()
         else:
             # For weekly, monthly, yearly, stats are on the sums per period
-            df_aggregated_for_stats_cat = df_filtered.groupby([df_filtered["Date"].dt.to_period(freq[0]), "Catégorie"])["Montant"].sum().reset_index()
+            df_aggregated_for_stats_cat = df_filtered.groupby([df_filtered["Date"].dt.to_period(freq_code), "Catégorie"])["Montant"].sum().reset_index()
             df_aggregated_for_stats_cat["PeriodKey"] = df_aggregated_for_stats_cat["Date"].astype(str) # Convert Period object to string
             df_aggregated_for_stats_cat = df_aggregated_for_stats_cat.drop(columns="Date")
 
-            df_aggregated_for_stats_total = df_filtered.groupby(df_filtered["Date"].dt.to_period(freq[0]))["Montant"].sum().reset_index(name="Montant")
+            df_aggregated_for_stats_total = df_filtered.groupby(df_filtered["Date"].dt.to_period(freq_code))["Montant"].sum().reset_index(name="Montant")
             df_aggregated_for_stats_total["PeriodKey"] = df_aggregated_for_stats_total["Date"].astype(str) # Convert Period object to string
             df_aggregated_for_stats_total = df_aggregated_for_stats_total.drop(columns="Date")
         
