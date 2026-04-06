@@ -1,0 +1,217 @@
+Date,Catégorie,Montant
+2024-01-01,Logement,723
+2024-01-01,Vie quotidienne,290
+2024-01-01,Transport,161
+2024-01-01,Autres Charges,155
+2024-01-01,Loisirs & Divertissement,264
+2024-01-01,Études,255
+2024-01-01,Santé,268
+2024-01-01,Epargnes,384
+2024-02-01,Logement,1197
+2024-02-01,Vie quotidienne,304
+2024-02-01,Transport,205
+2024-02-01,Autres Charges,142
+2024-02-01,Loisirs & Divertissement,243
+2024-02-01,Études,147
+2024-02-01,Santé,256
+2024-02-01,Epargnes,309
+2024-03-01,Logement,1108
+2024-03-01,Vie quotidienne,317
+2024-03-01,Transport,109
+2024-03-01,Autres Charges,172
+2024-03-01,Loisirs & Divertissement,187
+2024-03-01,Études,140
+2024-03-01,Santé,248
+2024-03-01,Epargnes,391
+2024-04-01,Logement,602
+2024-04-01,Vie quotidienne,368
+2024-04-01,Transport,162
+2024-04-01,Autres Charges,72
+2024-04-01,Loisirs & Divertissement,60
+2024-04-01,Études,84
+2024-04-01,Santé,101
+2024-04-01,Epargnes,306
+2024-05-01,Logement,971
+2024-05-01,Vie quotidienne,276
+2024-05-01,Transport,131
+2024-05-01,Autres Charges,273
+2024-05-01,Loisirs & Divertissement,160
+2024-05-01,Études,213
+2024-05-01,Santé,136
+2024-05-01,Epargnes,376
+2024-06-01,Logement,1149
+2024-06-01,Vie quotidienne,460
+2024-06-01,Transport,167
+2024-06-01,Autres Charges,299
+2024-06-01,Loisirs & Divertissement,274
+2024-06-01,Études,226
+2024-06-01,Santé,262
+2024-06-01,Epargnes,551
+2024-07-01,Logement,750
+2024-07-01,Vie quotidienne,442
+2024-07-01,Transport,180
+2024-07-01,Autres Charges,51
+2024-07-01,Loisirs & Divertissement,57
+2024-07-01,Études,106
+2024-07-01,Santé,180
+2024-07-01,Epargnes,381
+2024-08-01,Logement,904
+2024-08-01,Vie quotidienne,255
+2024-08-01,Transport,90
+2024-08-01,Autres Charges,209
+2024-08-01,Loisirs & Divertissement,222
+2024-08-01,Études,85
+2024-08-01,Santé,193
+2024-08-01,Epargnes,532
+2024-09-01,Logement,775
+2024-09-01,Vie quotidienne,495
+2024-09-01,Transport,279
+2024-09-01,Autres Charges,142
+2024-09-01,Loisirs & Divertissement,219
+2024-09-01,Études,65
+2024-09-01,Santé,69
+2024-09-01,Epargnes,487
+2024-10-01,Logement,788
+2024-10-01,Vie quotidienne,206
+2024-10-01,Transport,200
+2024-10-01,Autres Charges,299
+2024-10-01,Loisirs & Divertissement,197
+2024-10-01,Études,238
+2024-10-01,Santé,280
+2024-10-01,Epargnes,285
+2024-11-01,Logement,807
+2024-11-01,Vie quotidienne,492
+2024-11-01,Transport,272
+2024-11-01,Autres Charges,129
+2024-11-01,Loisirs & Divertissement,269
+2024-11-01,Études,126
+2024-11-01,Santé,109
+2024-11-01,Epargnes,293
+2024-12-01,Logement,657
+2024-12-01,Vie quotidienne,403
+2024-12-01,Transport,286
+2024-12-01,Autres Charges,155
+2024-12-01,Loisirs & Divertissement,271
+2024-12-01,Études,215
+2024-12-01,Santé,275
+2024-12-01,Epargnes,258
+2025-01-01,Logement,889
+2025-01-01,Vie quotidienne,355
+2025-01-01,Transport,263
+2025-01-01,Autres Charges,275
+2025-01-01,Loisirs & Divertissement,179
+2025-01-01,Études,226
+2025-01-01,Santé,270
+2025-01-01,Epargnes,535
+2025-02-01,Logement,965
+2025-02-01,Vie quotidienne,216
+2025-02-01,Transport,230
+2025-02-01,Autres Charges,272
+2025-02-01,Loisirs & Divertissement,147
+2025-02-01,Études,254
+2025-02-01,Santé,85
+2025-02-01,Epargnes,410
+2025-03-01,Logement,880
+2025-03-01,Vie quotidienne,220
+2025-03-01,Transport,255
+2025-03-01,Autres Charges,203
+2025-03-01,Loisirs & Divertissement,108
+2025-03-01,Études,117
+2025-03-01,Santé,231
+2025-03-01,Epargnes,428
+2025-04-01,Logement,821
+2025-04-01,Vie quotidienne,287
+2025-04-01,Transport,284
+2025-04-01,Autres Charges,193
+2025-04-01,Loisirs & Divertissement,100
+2025-04-01,Études,262
+2025-04-01,Santé,277
+2025-04-01,Epargnes,462
+2025-05-01,Logement,754
+2025-05-01,Vie quotidienne,231
+2025-05-01,Transport,115
+2025-05-01,Autres Charges,237
+2025-05-01,Loisirs & Divertissement,72
+2025-05-01,Études,131
+2025-05-01,Santé,242
+2025-05-01,Epargnes,445
+2025-06-01,Logement,940
+2025-06-01,Vie quotidienne,324
+2025-06-01,Transport,166
+2025-06-01,Autres Charges,162
+2025-06-01,Loisirs & Divertissement,285
+2025-06-01,Études,104
+2025-06-01,Santé,132
+2025-06-01,Epargnes,323
+2025-07-01,Logement,802
+2025-07-01,Vie quotidienne,334
+2025-07-01,Transport,147
+2025-07-01,Autres Charges,127
+2025-07-01,Loisirs & Divertissement,255
+2025-07-01,Études,260
+2025-07-01,Santé,76
+2025-07-01,Epargnes,589
+2025-08-01,Logement,1062
+2025-08-01,Vie quotidienne,241
+2025-08-01,Transport,143
+2025-08-01,Autres Charges,289
+2025-08-01,Loisirs & Divertissement,206
+2025-08-01,Études,185
+2025-08-01,Santé,254
+2025-08-01,Epargnes,261
+2025-09-01,Logement,1136
+2025-09-01,Vie quotidienne,295
+2025-09-01,Transport,277
+2025-09-01,Autres Charges,166
+2025-09-01,Loisirs & Divertissement,116
+2025-09-01,Études,227
+2025-09-01,Santé,195
+2025-09-01,Epargnes,306
+2025-10-01,Logement,795
+2025-10-01,Vie quotidienne,238
+2025-10-01,Transport,75
+2025-10-01,Autres Charges,160
+2025-10-01,Loisirs & Divertissement,190
+2025-10-01,Études,156
+2025-10-01,Santé,165
+2025-10-01,Epargnes,417
+2025-11-01,Logement,902
+2025-11-01,Vie quotidienne,331
+2025-11-01,Transport,202
+2025-11-01,Autres Charges,245
+2025-11-01,Loisirs & Divertissement,84
+2025-11-01,Études,219
+2025-11-01,Santé,85
+2025-11-01,Epargnes,312
+2025-12-01,Logement,756
+2025-12-01,Vie quotidienne,337
+2025-12-01,Transport,239
+2025-12-01,Autres Charges,96
+2025-12-01,Loisirs & Divertissement,100
+2025-12-01,Études,294
+2025-12-01,Santé,257
+2025-12-01,Epargnes,502
+2026-01-01,Logement,1038
+2026-01-01,Vie quotidienne,341
+2026-01-01,Transport,85
+2026-01-01,Autres Charges,285
+2026-01-01,Loisirs & Divertissement,268
+2026-01-01,Études,107
+2026-01-01,Santé,297
+2026-01-01,Epargnes,277
+2026-02-01,Logement,882
+2026-02-01,Vie quotidienne,268
+2026-02-01,Transport,60
+2026-02-01,Autres Charges,141
+2026-02-01,Loisirs & Divertissement,205
+2026-02-01,Études,123
+2026-02-01,Santé,158
+2026-02-01,Epargnes,599
+2026-03-01,Logement,978
+2026-03-01,Vie quotidienne,482
+2026-03-01,Transport,281
+2026-03-01,Autres Charges,180
+2026-03-01,Loisirs & Divertissement,227
+2026-03-01,Études,121
+2026-03-01,Santé,112
+2026-03-01,Epargnes,448
